@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maze</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js"></script>
 </head>
 <style>
@@ -16,9 +17,14 @@
         display: none!important;
     }
 
+    .hide-controls {
+        display: none!important;
+    }
+
     h1 {
         color: white;
-        font-size: 36px;
+        font-size: 64px;
+        font-family: 'Josefin Sans', sans-serif;
     }
 
     .winner {
@@ -30,11 +36,40 @@
         height: 100vh;
         width: 100vw;
     }
+    .control-ball {
+        display: flex;
+        flex-direction: column;
+        justify-self: start;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        opacity: 0.2;
+        z-index: 12;
+        border: 0px solid green;
+        background: #ff5722;
+        color: lightsteelblue;
+        padding: 5px;
+        cursor: pointer;
+    }
+    .control-ball h1 {
+        font-size: 16px!important;
+        margin: 0;
+    }
+    .control-ball:hover {
+        opacity: 1;
+    }
 </style>
 
 <body>
     <div class="winner hidden">
         <h1>You Winn!</h1>
+    </div>
+
+    <div class="control-ball">
+        <h1>W = Up</h1>
+        <h1>D = Right</h1>
+        <h1>S = Down</h1>
+        <h1>A = Left</h1>
     </div>
     <script src="index.js"></script>
 </body>
